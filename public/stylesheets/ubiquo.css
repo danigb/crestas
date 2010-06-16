@@ -1,0 +1,1190 @@
+@charset "utf-8";
+
+/*-------------- Generics / Reset --------------*/
+* { margin: 0; padding: 0; line-height: 1em; font-size: 1em;}
+body { font-size: 62.5%; background-color: #E5E5E5;}
+body, input, select, textarea { color: #000; font-family: "Trebuchet MS", Verdana, Helvetica, Arial, sans-serif;}
+a { text-decoration: none;}
+img { border: none;}
+hr, #skip { display: none;}
+iframe { width: 1px; height: 1px; border: none;}
+h1, h2, h3, h4, h5 { font-weight: normal;}
+h1 { font-size: 2.4em;}
+h2 { font-size: 1.6em;}
+h3 { font-size: 1.4em;}
+h4 { font-size: 1.3em;}
+h5 { font-size: 1.2em;}
+p, li, dt, dd, th, td { font-size: 1.2em;}
+li li, li td { font-size: 1em;}
+ul { list-style-type: none;}
+h1, h2, h3, h4, h5, p { line-height: 1.2em;}
+table, th, td { border: none;}
+
+/*-------------- Apartats generals --------------*/
+#wrapper { 
+	width: 100%;
+}
+/*--- header ---*/
+#header {}
+	#controls {
+		padding: .7em 2em .9em;
+		background-color: #000;
+	}
+		#controls li {
+			float: left;
+			margin-right: .8em;
+			padding-right: 1em;
+			font-size: 1em;
+			background: url(../images/ubiquo/controls_divider.gif) no-repeat right .2em;
+		}
+			#controls li:last-child {
+				margin-right: 0;
+				padding-right: 0;
+				background: none;
+			}
+		#controls li, #controls li a {
+			color: #FFF;
+		}
+			#controls li a, #controls li span {
+				font-size: 1.1em;
+			}
+			#controls li.ubiquo_user a {
+				padding-left: 14px;
+				background: url(../images/ubiquo/user.gif) no-repeat 0 50%;
+			}
+			#controls li.active a, #controls li.active span {
+				color: #000;
+				background-color: #FFF;
+			}
+		#general_configuration {
+			float: left;
+		}
+		#accessibility {
+			float: right;
+		}
+	#header_central {
+		height: 6.4em;
+		padding: .7em 2em 1em;
+	}
+		#header_central	form {
+			float: right;
+		}
+		#header_central	h1 {
+			font-size: 3.6em;
+                        width: 50%;
+                        float: left;
+		}
+			#header_central	h1 img {
+				vertical-align: middle;
+				margin-right: .4em;
+			}
+			#header_central h1 a {
+				color: #FFF;
+			}
+			#header_central h1 a:hover {
+				text-decoration: underline;
+			}
+	#tabs {
+		padding: 0 2em;
+	}
+		#tabs li {
+			float: left;
+			margin-right: .3em;
+			padding: .7em 1em;
+		}
+		#tabs li, #tabs li a  {
+			color: #FFF;
+		}
+		#tabs li.active {
+			background-color: #E5E5E5;
+		}
+			#tabs li a, #tabs li span {
+				font-size: 1.1em;
+			}
+		#contents_tabnav { /* navtab */
+			float: left;
+		}
+		#general_tabnav { /* navtab */
+			float: right;
+		}
+/*--- central ---*/
+#central {
+	position: relative;
+	padding: 2em 1em;
+}
+	/*--- content ---*/
+	#content {
+        position: relative;
+        float: left;
+        width: 72%;
+		background: #FFF url(../images/ubiquo/bg_content_right.gif) repeat-y right;
+		border-top: 1px solid #CCC;
+		border-left: 2px solid #CCC;
+	}
+	#inner-content {
+		padding: 1.3em 1.4em 1.7em 1em;
+		background: url(../images/ubiquo/bg_content_bottom.gif) repeat-x bottom;
+	}
+		#content a {
+			text-decoration: underline;
+		}
+		#content h1 {
+			line-height: 1.3em;
+			text-align: center;
+		}
+		#content h2 {
+			font-size: 1em;
+		}
+		.submenu {
+			margin: .7em 0 2em;
+			text-align: center;
+		}
+			.submenu li {
+				display: inline;
+			}
+			.submenu li a, .submenu li span {
+				padding: .1em;
+			}
+			.submenu li.active a, .submenu li.active span {
+				color: #FFF;
+			}
+	/*--- sidebar ---*/
+	#sidebar {
+		float: left;
+		margin-left: 15px;
+		width: 25%;	
+	}
+		#sidebar .sidebar_box {
+            position: relative;
+			margin-bottom: 2em;
+		} 
+			
+		#sidebar h3 {
+			margin-bottom: .5em;
+			padding-bottom: .2em;
+			font-size: 1.8em;
+			border-bottom: 1px solid #000;
+		}    
+		
+		#sidebar h4 {
+			margin-bottom: .4em;
+			font-size: 1.4em;
+			color: #546D78;
+		}
+		#sidebar p {
+			margin-bottom: .4em;
+		}  
+		
+	   
+		  
+	/*--- sidebar: filtres ---*/
+	a.bot_filters {
+		position: absolute;
+		top: .5em;
+		right: 0;
+		font-size: 1.2em;
+	}
+	.sidebar_box a.on {
+		color: #FFF;
+	}
+	#links_filter_content li {
+		margin-bottom: .3em;
+		font-size: 1.4em;
+	}
+	#tag_filter_content li {
+		display: inline;
+	}
+		#tag_filter_content li a.size1 {
+			font-size: 1em;
+		}
+		#tag_filter_content li a.size2 {
+			font-size: 1.4em;
+		}
+		#tag_filter_content li a.size3 {
+			font-size: 2em;
+		}
+		#tag_filter_content li a.size4 {
+			font-size: 2.8em;
+		}
+	#date_filter_content p {
+		margin-bottom: .4em;
+	}
+		#date_filter_content label {
+			display: block;
+			float: left;
+			width: 4em;
+			padding-top: .3em;
+			font-size: .9em;
+		}
+		#date_filter_content input.filter_submit {
+			float: right;
+		}
+	/*--- sidebar: maquetacio ---*/
+	#page_info p {
+		padding: .1em 0 .1em 3.3em;
+	}
+	#page_info p.published_page {
+		background: url(../images/ubiquo/published.gif) no-repeat left center;
+	}
+	#page_info p.non_published_page {
+		background: url(../images/ubiquo/non_published.gif) no-repeat left center;
+	}
+		#page_info h4 a {
+			font-size: .8em;
+		}
+		#page_info p a {
+			font-size: .9em;
+		}
+	#page_info .button-to div {
+		text-align: right;
+		font-size: 1.2em;
+	}
+/*--- footer ---*/
+
+#footer {
+	margin-left: 12px;
+	font-size: 13px;
+	font-family: Helvetica, Arial, sans-serif;
+	color: #969696;
+	line-height: 1.1em;
+  overflow: hidden;
+  zoom: 1;
+  width: 71%;
+}
+
+#footer a{
+	color: #424242;
+	text-decoration: underline;
+	margin-right: 7px;
+}
+
+#footer a:hover {
+	text-decoration: none;
+}
+
+#footer div.links_ubiquo, #footer div.logo_ubiquo{
+  float: right;
+}
+
+#footer div.links_ubiquo {
+  text-align: left;
+}
+
+#footer a.logo_ubiquo {
+	background: url("../images/ubiquo/logo_ubiquo.jpg") top left no-repeat;
+	width: 90px;
+	height: 30px;
+	text-indent: -1000px;
+	border-right: 1px solid #c9c9c9;
+	margin-right: 14px;
+  display: block;
+}
+
+/*-------------- Estils genèrics --------------*/
+/*--- missatges ---*/
+#empty {
+	margin: 1em 0;
+	padding: .8em;
+	font-size: 1.4em;
+	background-color: #ECF5F4;
+	border: 1px solid #C2D2D1;
+        clear: both;
+}
+#feedback_error, #feedback_notice {
+	margin: .67em 0;
+	padding: .67em;
+}
+#feedback_error, #feedback_notice {
+	font-size: 1.5em;
+	font-weight: bold;
+}
+#feedback_error, #errorExplanation {
+	background-color: #EFD2D4;
+	border: 1px solid #B7393D;
+}
+#feedback_error {
+	color: #B7393D;
+}
+#feedback_notice {
+	color: #4CB53B;
+	background-color: #D4EFD0;
+	border: 1px solid #4CB53B;
+}
+#errorExplanation {
+	margin: 0 0 1em;
+	padding: 1em;
+}
+	#errorExplanation h2 {
+		margin: -.54em -.54em .6em;
+		padding: .4em;
+		color: #FFF;
+		font-weight: bold;
+		font-size: 1.3em;
+		background-color: #B7393D;
+	}
+	#errorExplanation ul {
+		padding-left: 2em;
+	}
+	#errorExplanation p, #errorExplanation li {
+		color: #333;
+	}
+	#errorExplanation p {
+		margin-bottom: .7em;
+	}
+	#errorExplanation li {
+		margin-bottom: .5em;
+		list-style-type: square;
+	}
+/*--- botons ---*/
+#content a.new {
+	display: block;
+	float: right;
+	font-size: 1.3em;
+	font-weight: bold;
+}
+
+/*--- handle ---*/
+.handle {
+ 	display: block;
+ 	position: static;
+ 	float: left;
+ 	width: 17px;
+ 	height: 17px;
+ 	text-indent: -5000px;
+ 	background: url(../images/ubiquo/updownarrows.gif) no-repeat 0 0;
+ 	cursor: move;
+}
+
+/*--- paginador ---*/
+.pagination {
+	position: relative;
+	margin: .5em 0;
+	padding: .5em 0;
+}
+	#content .pagination a {
+		position: absolute;
+		top: 0;
+		color: #000;
+		font-size: 1.1em;
+		text-decoration: none;
+		text-transform: lowercase;
+	}
+	.pagination a.bot_pag_prev {
+		left: 0;
+		padding-left: 1.6em;
+		background: url(../images/ubiquo/arrow_left.gif) no-repeat left center;
+	}
+	.pagination a.bot_pag_next {
+		right: 0;
+		padding-right: 1.6em;
+		background: url(../images/ubiquo/arrow_right.gif) no-repeat right center;
+	}
+/*--- corners ---*/
+.corner_tl, .corner_tr, .corner_bl, .corner_br {
+	position: absolute;
+	display: block;
+	width: 9px;
+	height: 9px;
+}
+.corner_tl {
+	background: url(../images/ubiquo/bg_corner_tl.gif) no-repeat 0 0;
+	top: -1px;
+	left: -2px;
+}
+.corner_tr {
+	background: url(../images/ubiquo/bg_corner_tr.gif) no-repeat 0 0;
+	top: -1px;
+	right: 0;
+}
+.corner_bl {
+	background: url(../images/ubiquo/bg_corner_bl.gif) no-repeat 0 0;
+	bottom: 0;
+	left: -2px;
+}
+.corner_br {
+	background: url(../images/ubiquo/bg_corner_br.gif) no-repeat 0 0;
+	bottom: 0;
+	right: 0;
+}
+.form_box .corner_tl, .form_box .corner_tr, .form_box .corner_bl, .form_box .corner_br {
+	width: 6px;
+	height: 6px;
+}
+.form_box .corner_tl {
+	background-image: url(../images/ubiquo/bg_form_box_tl.gif);
+	top: -2px;
+	left: -2px;
+}
+.form_box .corner_tr {
+	background-image: url(../images/ubiquo/bg_form_box_tr.gif);
+	top: -2px;
+	right: -2px;
+}
+.form_box .corner_bl {
+	background-image: url(../images/ubiquo/bg_form_box_bl.gif);
+	bottom: -2px;
+	left: -2px;
+}
+.form_box .corner_br {
+	background: url(../images/ubiquo/bg_form_box_br.gif);
+	bottom: -2px;
+	right: -2px;
+}
+/*-------------- Seccions --------------*/
+/*--- taula dades genèrica ---*/
+#content table {
+	clear: both;
+	margin: 2em 0;
+}
+#content th, #content td {
+	border-right: 2px solid #FFF;
+	border-bottom: 2px solid #FFF;
+}
+#content th:last-child, #content td:last-child {
+	border-right: none;
+}
+#content th {
+	padding: .4em;
+	text-align: left;
+	font-size: 1.4em;
+	font-weight: bold;
+	background-color: #E8EDD7;
+}
+#content th.actions {
+	width: 16.8em;
+}
+#content td.actions {
+	width: 20em;
+}
+	#content th a {
+		color: #000;
+		display: block;
+	}
+	#content th a.order_asc {
+		background: url(../images/ubiquo/arrow_asc.png) no-repeat right center;
+	}
+	#content th a.order_desc {
+		background: url(../images/ubiquo/arrow_desc.png) no-repeat right center;
+	}
+#content td {
+	padding: .5em;
+}
+#content tr.odd td, #menu_items_list table.odd {
+	background-color: #E4E5E7;
+}
+#content tr:hover {
+	background: #F0BB47;
+}
+	#content tr:hover td {
+		background: none;
+	}
+
+/*--- llistat de caixes (llistat usuaris..) ---*/
+.box_list {
+	clear: both;
+}
+        .box_list .box {
+			font-size: 1em;
+			position: relative;
+			height: 10.8em;
+			width: 31.6em;
+            float:left;
+			padding: 1.6em;
+			margin: 0 1.3em 1.3em 0;
+			background-color: #F1F1F1;
+        }
+		.box_list .box h3 {
+			font-size: 1.8em;
+			width: 15em;
+        }
+			.box_list .box h3 .user-status {
+				font-size: .78em;
+			}
+			.box_list .box h3 .status-active {
+				color: #2eb135;
+			}
+			.box_list .box h3 .status-inactive {
+				color: #b12808;
+			}
+		.box_list .box .user-role {
+			font-size: 1.4em;
+			margin-bottom: 1.43em;
+		}
+		.box_list .box .user-mail {
+			font-size: 1.4em;
+			color: #696969;
+		}
+        .box_list .box .user-icon {
+            position: absolute;
+			top: .8em;
+			right: .8em;
+			padding: .2em;
+			border: 1px solid #b1b1b1;
+        }
+		.box_list .box .user-icon img {
+			display: block;
+        }
+		.box_list .box .actions {
+            position: absolute;
+			bottom: .8em;
+			right: .8em;
+			font-size: 1.3em;
+        }
+		
+/*--- taula dades per TinyMCE ---*/
+#content .mceLayout table {
+	clear: both;
+	margin: 0;
+}
+#content .mceLayout th, #content .mceLayout td  {
+	border-right: none;
+    border-bottom: none;
+}
+#content .mceLayout th:last-child, #content .mceLayout td:last-child {
+	border-right: none;
+    border-bottom: none;
+}
+#content .mceLayout th {
+	padding: 0;
+	text-align: left;
+	font-size: 1em;
+	font-weight: normal;
+	background: none;
+}
+	#content .mceLayout th a {
+		color: #000;
+	}
+
+#content .mceLayout td {
+	padding: 0;
+}
+#content .mceLayout tr.mceLast td { 
+    border-bottom: 1px solid #CCC;
+}
+
+#content .mceLayout tr:hover {
+	background: none;
+}
+	#content .mceLayout tr:hover td {
+		background: none;
+	}
+
+/*--- taula mapa web ---*/
+table#menu_items_list_titles {
+	margin: 1em 0 .5em;
+}
+#menu_items_list table {
+	margin: 0 0 .3em;
+}
+	#menu_items_list td {
+		padding: .3em;
+	}
+	#menu_items_list td.handle {
+		float: none;
+		display: table-cell;
+	}
+	#menu_items_list ul {
+		padding-left: 2.5em;
+	}
+/*--- formularis ---*/
+.error_field {
+	padding: .2em;
+	border: 1px solid #FF0000;
+}
+.file_error_field {
+	padding: .2em;
+    width: 28em;
+	border: 1px solid #FF0000;
+}
+.checkbox_error_field {
+	padding: 0.5em 0.1em 0 0.2em;
+    width: 1.4em;
+	border: 1px solid #FF0000;
+}
+.radio_error_field {
+	padding: 0.5em 0.1em 0 0.2em;
+    width: 1.4em;
+	border: 1px solid #FF0000;
+}
+.form_box {
+	position: relative;
+	margin: 2em 0 1em;
+	padding: 2em;
+	background-color: #F3F6EB;
+	border: 2px solid #D5D9C2;
+}
+form h3 {
+	font-size: 1.6em;
+	margin-bottom: 1em;
+}
+form fieldset {
+	margin: 1em 0;
+	padding: 1em;
+	border: 1px solid #D5D9C2;
+}
+form legend {
+	padding: 0 .3em;
+	font-weight: bold;
+	font-size: 1.3em;
+}
+form p, form li {
+	margin-bottom: 1em;
+}
+form label {
+	font-weight: bold;
+}
+#content form input, #content form select {
+	display: block;
+	margin-top: .2em;
+}
+#content form p.datetime select {
+	display: inline;
+}
+#content form input[type="checkbox"],#content form input[type="radio"], #content form input[type="hidden"] {
+	display: inline;
+}
+form .page_templates li {
+	float: left;
+	margin-right: 1em;
+}
+	form .page_templates input {
+		display: inline;
+		vertical-align: middle;
+	}
+	form .page_templates label {
+		font-weight: normal;
+		font-size: 1em;
+	}
+	form .page_templates img {
+		display: block;
+	}
+form textarea {
+	width: 100%;
+}
+.form_buttons {
+    border-top: 1px solid #CCC;
+    padding-top: 0.7em;
+	text-align: right;
+}
+#content .form_buttons input {
+	display: inline;
+}
+
+
+/*--- llista elements multimedia relacionats ---*/
+.relations_list {}
+.relations_list li {
+	clear: both;
+	padding: 0 0 .7em;
+	border-bottom: 1px solid #D5D9C2;
+}
+.relations_list li h4 {
+	font-size: 1.2em;
+	font-weight: bold;
+	margin: 0 .4em .4em 0;
+}
+.relations_list li img {
+	margin-right: .4em;
+}
+.relations_list li a.view, .relations_list li a.delete {
+	margin-right: .2em;
+}
+.relations_list li dl {
+	clear: both;
+	margin: .7em 0 0;
+}
+.relations_list li dt, .relations_list li dd {
+	display: inline;
+	font-size: 1em;
+}
+.relations_list li dd input {
+	display: inline!important;
+}
+.relations_list li dd span {
+	font-style: italic;
+}
+.relations_list li a.change {
+	margin-left: .7em;
+}
+
+/*--- Maquetació ---*/
+.column_4, .column_3, .column_2, .column_1 {
+	margin: 0 1.5% 1.5% 0;
+}
+.column_4 {
+	width: 98.5%;
+}
+.column_3, .column_2, .column_1 {
+	float: left;
+}
+.column_3 {
+	width: 73.5%;
+}
+.column_2 {
+	width: 48.5%;
+}
+.column_1 {
+	width: 23.5%;
+}
+#template .draggable_target {
+	background: #E9E9E9 url(../images/ubiquo/bg_dragdrop.jpg) no-repeat center center;
+}
+#template .non_draggable_target {
+	background: #F7F7F7 url(../images/ubiquo/bg_no_dragdrop.jpg) no-repeat center center;
+}
+.top_options p {
+	margin-bottom: .4em;
+	font-size: 1.1em;
+}
+	.top_options input {
+		vertical-align: middle;
+	}
+	ul.block_type_holder {
+		min-height: 15em;
+		padding: 1em;
+		border: .1em solid #B4B4B4;
+	}
+	.column_3 ul.block_type_holder, .column_2 ul.block_type_holder, .column_1 ul.block_type_holder {
+		min-height: 28em;
+	}
+li.component {
+	position: relative;
+	width: 13.9em;
+	height: 5.2em;
+	padding: 4.2em 1em 0 .7em;
+	margin: 0 auto;
+	font-size: 1em;
+	background: url(../images/ubiquo/component.jpg) no-repeat;
+}
+ul.block_type_holder li.error { /* ie6 no accepta li.component.error */
+	background: url(../images/ubiquo/component_error.jpg) no-repeat;
+}
+#sidebar li.component {
+	width: 23em;
+	height: 4.3em;
+	padding: 1.5em 1em 0 .7em;
+	background-image: url(../images/ubiquo/long_component.jpg);
+}
+	li.component a {
+		position: absolute;
+		top: .6em;
+	}
+	li.component a.delete {
+		left: .6em;
+		width: 14px;
+		height: 15px;
+		text-indent: -5000px;
+		background: url(../images/ubiquo/trash_icon.jpg) no-repeat;
+	}
+	#central li.component a.edit {
+		right: 2.4em;
+		font-size: 1.2em;
+		text-decoration: none;
+	}
+	li.component a.move {
+		right: .9em;
+		width: 17px;
+		height: 17px;
+		text-indent: -5000px;
+		background: url(../images/ubiquo/cross.gif) no-repeat;
+	}
+	li.component a.editor_cancel {
+		position: static;
+	}
+	#sidebar li.component a.move {
+		top: 1.6em;
+		left: .3em;
+	}
+	#central li.component h4 {
+		color: #572F14;
+		text-align: center;
+		font-size: 1.5em;
+		font-weight: bold;
+	}
+	#central li.component form input {
+		display: inline;
+	}
+
+
+/*--- Translation sidebar box ---*/
+#sidebar .translation {
+	height: 18px;
+	padding-top: 2px;
+	padding-left: 4px;
+}
+
+#sidebar .translation span.name {
+	float: left;
+	font-size: 14px;	
+}
+
+#sidebar .translation .options {
+	float: right;
+	font-size: 12px;
+	color: #881b20;
+	width: 45%;
+	text-align: center;
+}
+
+#sidebar .translation .options a.preview {
+	float: right;
+}
+
+#sidebar .translation .options a.edit {
+	float: left;
+}
+
+#sidebar .translation .options a.translate {
+	float: left;
+}
+
+#sidebar .selected {
+	background: #881b20;
+}
+
+#sidebar .selected, 
+#sidebar .selected .options,
+#sidebar .selected a {
+	color: #fff;
+}
+
+/*--- Versions sidebar box ---*/
+
+
+/* Versions pàgina */
+#sidebar .version,
+#sidebar .version_selected {
+	background-color: #D6D6D6;
+	margin-bottom: 6px;
+	overflow: hidden;
+	position: relative;
+	width: 240px;
+	padding: 3px;
+}
+
+#sidebar .version_selected {
+	background: #aaa;
+}
+
+#sidebar .version .se {
+	background: transparent url("../images/ubiquo/corner_pt_se.gif") no-repeat scroll 0 0;
+}
+#sidebar .version_selected .se {
+	background: transparent url("../images/ubiquo/corner_pt_se2.gif") no-repeat scroll 0 0;
+}
+
+#sidebar .version .sd {
+	background: transparent url("../images/ubiquo/corner_pt_sd.gif") no-repeat scroll 0 0;
+}
+#sidebar .version_selected .sd {
+	background: transparent url("../images/ubiquo/corner_pt_sd2.gif") no-repeat scroll 0 0;
+}
+
+#sidebar .version .ie {
+	background: transparent url("../images/ubiquo/corner_pt_ie.gif") no-repeat scroll 0 0;
+}
+#sidebar .version_selected .ie {
+	background: transparent url("../images/ubiquo/corner_pt_ie2.gif") no-repeat scroll 0 0;
+}
+
+#sidebar .version .id {
+	background: url("../images/ubiquo/corner_pt_id.gif") no-repeat scroll 0 0;
+}
+
+#sidebar .version_selected .id {
+	background: url("../images/ubiquo/corner_pt_id2.gif") no-repeat scroll 0 0;
+}
+
+#sidebar .version p.name,
+#sidebar .version_selected p.name {
+	background:transparent url("../images/ubiquo/icona_wiki.gif") no-repeat scroll left top;
+	clear: both;
+	font-size: 14px;
+	font-weight: bold;
+	height: 17px;
+	margin: 4px 0 0 7px;
+	padding-left: 17px;
+	position: relative;
+}
+#sidebar .version p.name span.data,
+#sidebar .version_selected p.name span.data {
+	font-weight: normal;
+        padding-left: 10px;
+}
+
+#sidebar .version p.author,
+#sidebar .version_selected p.author {
+	clear:both;
+	color:#616161;
+	font-size:12px;
+	margin:0;
+	padding-left:21px;
+	position: relative;
+}
+
+#sidebar .version .options,
+#sidebar .version_selected .options {
+	line-height: 1em;
+	margin-bottom: 2px;
+	margin-right: 4px;
+	padding-left: 21px;
+	position: relative;
+}
+
+#sidebar .version .options ul,
+#sidebar .version_selected .options ul {
+	margin: 0;
+	padding: 0;
+}
+
+#sidebar .version .options li,
+#sidebar .version_selected .options li {
+	display:inline;
+}
+
+#sidebar .version .options li a,
+#sidebar .version_selected .options li a {
+	background: transparent none repeat scroll 0 0;
+	color: #AF2229;
+	margin-right: 0.4em;
+	text-decoration: underline;
+}
+
+.se, .sd, .ie, .id {
+	height: 5px;
+	overflow: hidden; 
+	position: absolute;
+	width: 5px;
+}
+
+.se {
+	left: 0;
+	top: 0;
+}
+
+.sd {
+	right: 0;
+	top: 0;
+}
+
+.ie {
+	bottom: 0;
+	left: 0;
+}
+
+.id {
+	bottom: 0;
+	right: 0;
+}
+
+/*--- Preview ---*/
+
+
+.preview p.notice {
+	font-size: 14px;
+	padding: 13px;
+	background-color: #ecf5f4;
+	border: 1px solid #c2d2d1;
+	margin-bottom: 35px;
+}
+
+.preview p.notice em {
+	font-weight: bold;
+	font-style: normal;
+}
+
+.preview dl,
+.preview ul, 
+.preview dd.text {
+	font-size: 12px;
+}
+
+.preview dt {
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+.preview dd {
+	color: #778180;
+	margin-bottom: 20px;	
+}
+
+.preview ul {
+	list-style-type: disc;
+	margin-left: 14px;
+}
+
+.preview ul li {	
+	margin-bottom: 2px;
+}
+
+.preview dd.images {
+	margin-top: 10px;
+}
+
+
+.preview dd.images ul {
+	list-style-type: none;
+	margin: 0;
+}
+
+.preview dd.images li {
+	float: left;
+	width: 100px;
+	margin-right: 20px;
+}
+
+.preview dd.images span {
+	width: 100px;
+	height: 82px;
+	background-color: #ecf5f4; 
+	float: left;
+/*	border: 1px solid red; */
+	text-align: center;
+	padding-top: 18px;
+	margin-bottom: 5px;
+}
+
+.preview dd.images img {
+  width: 50px;
+  height: 64px;
+}
+
+.preview dd.images p {
+	text-align: center;
+	font-size: 12.5px;
+	line-height: 1.1em;
+}
+
+.preview dd.text {
+	background-color: #ecf5f4; 
+	padding: 12px;
+	margin-top: 10px;
+}
+
+.preview dd.text p {
+	margin-bottom: 10px;
+}
+
+.preview dd.text em {
+	font-weight: bold;
+	font-style: normal;
+}
+
+.preview dd.text h6 {
+	font-size: 14px;
+}
+
+.preview ul.attachment {
+	margin-left: 0;
+}
+
+.preview ul.attachment li {
+	list-style-type: none;
+	background: url("../images/ubiquo/attachment.gif") left center no-repeat;
+	padding-left: 17px;
+}
+
+
+
+/*--- Lightwindow ---*/
+#lightwindow_stage {
+	width: 67.9em;
+}
+	#ubiquo_lb {
+		position: relative;
+		overflow: hidden;
+		padding: 2em;
+		background: url(../images/ubiquo/bg_lightwindow_long.png) no-repeat left top;
+	}
+		#lightwindow_contents {
+			background: none;
+			border: none;
+		}
+			#lightwindow_contents h3 {
+				margin-bottom: 1em;
+				font-size: 1.8em;
+			}
+			#lightwindow_contents a.close {
+				display: block;
+				position: absolute;
+				top: 0;
+				right: 1em;
+				width: 19px;
+				height: 19px;
+				text-indent: -5000px;
+				background: url(../images/ubiquo/close.jpg) no-repeat 0 0;
+			}
+			#lightwindow_contents input {
+				display: block;
+				width: 26em;	
+			}
+			#lightwindow_contents h4, #lightwindow_contents p {
+				font-size: 1.1em;
+			}
+			#lightwindow_contents h4 {
+				font-weight: bold;
+			}
+			#lightwindow_contents fieldset ul.assets_list {
+				margin-top: .6em;
+			}
+			#lightwindow_contents fieldset li, #lightwindow_contents fieldset .assigned_text {
+				position: relative;
+			}
+			#lightwindow_contents fieldset li {
+				margin-bottom: .4em;
+				padding: 0 0 .4em;
+				font-size: 1em;
+				border-bottom: 1px solid #D5D9C2;
+			}
+				.spinner { /* hauria de ser genèric */}
+				#lightwindow_contents fieldset li a {
+					position: absolute;
+					top: 0;
+					right: 0;
+					font-size: 1.2em;
+				}
+				#lightwindow_contents .handle { /* hauria de ser genèric */
+					display: block;
+					position: static;
+					float: left;
+					width: 17px;
+					height: 17px;
+					text-indent: -5000px;
+					background: url(../images/ubiquo/updownarrows.gif) no-repeat;
+					cursor: move;
+				}
+				#lightwindow_contents fieldset li a.view {
+					right: 6em;
+				}
+				#lightwindow_contents fieldset li h4 {
+					font-size: 1.2em;
+				}
+				#lightwindow_contents fieldset h4, #lightwindow_contents fieldset dt {
+					font-weight: bold;
+				}
+				#lightwindow_contents fieldset dl {
+					margin-top: .4em;
+				}
+				#lightwindow_contents fieldset dt, #lightwindow_contents fieldset dd {
+					display: inline;
+					margin-right: .4em;
+					font-size: 1.1em;
+				}
+				#lightwindow_contents fieldset dd input {
+					display: inline;
+				}
+			#lightwindow_contents .form_buttons {
+				margin-top: 1.5em;
+			}
+				#lightwindow_contents .form_buttons input {
+					width: 6em;	
+				}
+	#lightwindow_stage .inferior {
+		height: 4em;
+		background: url(../images/ubiquo/bg_lightwindow.png) no-repeat left bottom;
+	}
+
+/*-------------- Clearfix --------------*/
+#controls:after, #tabs:after, #central:after, #content:after, .submenu:after, form .page_templates:after, form#frm_calendar p:after, #template:after, .form_box:after, .box_list:after { content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+#controls, #tabs, #central, #content, .submenu, form .page_templates, form#frm_calendar p, #template, .form_box, .box_list { height: 1%;}

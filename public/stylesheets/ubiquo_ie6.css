@@ -1,0 +1,32 @@
+.pagination a.bot_pag_next {
+	right: 1em;
+}
+.corner_br {
+	bottom: -7px;
+}
+.corner_bl {
+	bottom: -7px;
+}
+.corner_br {
+	bottom: -7px;
+}
+.form_box .corner_tr {
+	right: -2px;
+}
+.form_box .corner_bl {
+	bottom: -11px;
+}
+.form_box .corner_br {
+	bottom: -11px;
+	right: -2px;
+}
+
+#sidebar .sidebar_title {
+   	border: 1px solid #E5E5E5; 
+	border-bottom: #000;
+}  
+
+a.bot_filters {
+	top: 8px;
+	right: 0;       
+}    

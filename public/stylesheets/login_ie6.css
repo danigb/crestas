@@ -1,0 +1,10 @@
+.form_box .corner_tr {
+	right: 0;
+}
+.form_box .corner_bl {
+	bottom: -1px;
+}
+.form_box .corner_br {
+	bottom: -1px;
+	right: 0;
+}

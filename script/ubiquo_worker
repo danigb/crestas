@@ -1,0 +1,76 @@
+#!/usr/bin/env ruby
+require 'rubygems'
+require 'daemons'
+
+starter = File.join(File.dirname(__FILE__), '..', 'vendor', 'plugins', 'ubiquo_jobs', 'lib', 'ubiquo_worker', 'starter.rb')
+
+# Default values
+options = {}
+options[:command]= 'start'
+options[:num_workers] = 1
+options[:delay] = 5.0
+options[:on_top] = ENV['RAILS_ENV'] == "development" ||  ENV['RAILS_ENV'].nil?
+
+# Parse script options
+opts = OptionParser.new do |opts|
+  opts.banner = "Usage: script/ubiquo_worker [worker_id] [options]"
+  opts.separator ""
+  opts.separator "Main command options:"
+  opts.on("--start", "Default. Start ubiquo workers") do |n|
+    options[:command] = 'start'
+  end
+  opts.on("--stop", "Stop the existing workers") do |n|
+    options[:command] = 'stop'
+  end
+  opts.separator ""
+  opts.separator "Specific start options:"
+  opts.on("-n", "--num-workers N", Integer, "Number of workers to be started. Defaults to one") do |n|
+    options[:num_workers] = n
+  end
+  opts.on("-d", "--delay N", Float, "Sleep time when no jobs are found (in seconds). Defaults to 5") do |n|
+    options[:delay] = n
+  end
+  opts.on("-t", "--on-top", "Run on top") do |v|
+    options[:on_top]= v
+  end
+  opts.on("-b", "--on-background", "Run on background") do |v|
+    options[:on_top]= !v
+  end
+
+  opts.separator ""
+  opts.separator "Common options:"
+  
+  # No argument, shows at tail.  This will print an options summary.
+  opts.on_tail("-h", "--help", "Show this message") do
+    puts opts
+    exit
+  end
+end
+
+opts.parse!(ARGV)
+
+if options[:command] == 'start' && ARGV.empty? 
+  raise ArgumentError, "A worker name is required as an application option"
+end
+
+# Start daemons with the required parameters
+options[:num_workers].times do |i|
+  Process.fork do
+    worker_id = ARGV[0].to_s + (options[:num_workers] > 1 ? i.to_s : '')
+    daemon_options = {
+      :ontop => options[:on_top],
+      :ARGV => [options[:command] || 'start', '--', worker_id, options[:delay]],
+      :app_name => 'ubiquo_worker',
+      :multiple => true,
+      :monitor => true,
+      :log_output => true,
+      :keep_pid_files => true,
+      :dir_mode   => :normal,
+      :dir        => File.join(File.dirname(__FILE__), '..', 'log'),
+    }
+
+    Daemons.run(starter, daemon_options)
+  end
+end
+
+Process.waitall

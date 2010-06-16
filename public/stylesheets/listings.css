@@ -1,0 +1,63 @@
+/* Pàgina principal llistat */
+
+img.list_example {
+	float: left;
+	height: 264px;
+	margin-right: 10px;
+}
+
+#balloon_list {
+	position: relative;
+	float: left;
+	width: 318px;	
+	background-color: #ecf5f4;
+	padding: 20px;
+}
+
+#balloon_list h4 {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+#balloon_list p {
+	font-size: 24px;
+}
+
+#balloon_list .balloon_triangle {
+	position: absolute;
+	width: 29px;
+	min-height: 28px;
+	bottom: -28px;
+	left: 20px;
+	background: url("../images/ubiquo/balloon-triangle.gif") top left no-repeat;
+}
+
+.empty_list { 
+    margin: 0 auto 20px auto;
+    text-align: center;
+    width: 100%;
+}
+
+#balloon_actions {
+	text-align: center;	
+	margin-top: 50px;
+	margin-bottom: 50px;	
+}
+
+#balloon_actions a.new {
+	font-size: 24px;
+	font-weight: bold;
+    float: none;
+}
+
+.balloon_wrapper { 
+    float: left;
+    position: relative;
+    left: 50%;
+}
+
+.balloon_content {
+    float: left;
+    position: relative;
+    left: -50%;
+}
